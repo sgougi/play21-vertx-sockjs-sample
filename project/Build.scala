@@ -20,9 +20,7 @@ object ApplicationBuild extends Build {
    "io.netty" % "netty-all" % {nettyVersion},   
    "io.vertx" % "vertx-core" % {vertxVersion},   
    "io.vertx" % "vertx-platform" % {vertxVersion},   
-    javaCore  excludeAll(
-      ExclusionRule(organization = "io.netty")
-    )
+    javaCore
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
