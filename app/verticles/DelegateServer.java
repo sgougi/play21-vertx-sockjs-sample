@@ -33,7 +33,7 @@ public class DelegateServer extends Verticle {
 				AppLogger.debug("Proxying request: %s",  req.uri());
 				final HttpClientRequest cReq = getRequest(req, httpClient);
 				cReq.headers().set(req.headers());
-				cReq.headers().set("playonevertx-delegate", "true");
+				cReq.headers().set("play-vertx-delegate", "true");
 				cReq.setChunked(true);
 				req.dataHandler(new Handler<Buffer>() {
 					public void handle(Buffer data) {

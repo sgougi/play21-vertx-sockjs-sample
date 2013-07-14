@@ -4,8 +4,6 @@ import java.net.URL;
 import org.vertx.java.platform.PlatformLocator;
 import org.vertx.java.platform.PlatformManager;
 
-import controllers.AppLogger;
-
 import play.Application;
 import play.Configuration;
 import play.GlobalSettings;
@@ -14,6 +12,7 @@ import play.mvc.Action;
 import play.mvc.Http.Context;
 import play.mvc.Http.Request;
 import play.mvc.Result;
+import controllers.AppLogger;
 
 public class Global extends GlobalSettings {
 
@@ -21,7 +20,7 @@ public class Global extends GlobalSettings {
 	public Action onRequest(Request request, Method actionMethod) {
 		final Configuration c = Play.application().configuration();
 		
-		if( request.getHeader("playonevertx-delegate") == null ) {
+		if( request.getHeader("play-vertx-delegate") == null ) {
 			final String redirectUrl = "http://" 
 					+ request.host().replaceAll(
 							":" + c.getInt("http.port", 9000), 
