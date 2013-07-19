@@ -8,8 +8,8 @@ object ApplicationBuild extends Build {
   val appVersion      = "1.0-SNAPSHOT"
   val hazelcastVersion = "2.6"
   val jacksonVersion  = "2.2.2"
-  val nettyVersion    = "4.0.0.CR9"
-  val vertxVersion    = "2.0.0-CR3"
+  val nettyVersion    = "4.0.2.Final"
+  val vertxVersion    = "2.0.0-final"
     
   val appDependencies = Seq(
     // Add your project dependencies here,
